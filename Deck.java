@@ -1,6 +1,6 @@
 import java.util.Random;
 
-class Deck {
+public class Deck {
 	
 	private Card blank = new Card();
 	//private Card[] cards = new Card[52];

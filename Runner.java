@@ -1,8 +1,16 @@
-class Runner {
-	
-	public static void main(String[] args) {
-		Deck d1 = new Deck();
-		d1.print();
+import java.awt.*;
+import java.applet.*;
+
+public class Runner extends Applet {
+
+	private Game game;
+
+	public void init() {
+		game = new Game();
+	}
+
+	public void paint(Graphics g) {
+		game.draw(g);
 	}
 
 }

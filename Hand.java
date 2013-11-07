@@ -1,4 +1,4 @@
-class Hand {
+public class Hand {
 	
 	private Card[] hand = new Card[11];
 	private int cardsInHand;
@@ -11,6 +11,12 @@ class Hand {
 		totalValue = this.hand[0].value() + this.hand[1].value();
 		this.reduce();
 	}
+
+	public Card card(int index) {
+		if (index <= cardsInHand) {
+			return hand[index];
+		}
+	} 
 
 	public void hit(Deck d) {
 		this.hand[cardsInHand] = d.deal();
