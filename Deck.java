@@ -44,6 +44,10 @@ public class Deck {
 		}
 	}
 
+	public Card[] makeDeck() {
+		return cards;
+	}
+
 	public void printSimple(){
 		for (int i = 0; i < cards.length; i++) {
 			System.out.println(" " + cards[i].number() + " " + cards[i].suit());
@@ -70,6 +74,10 @@ public class Deck {
 		Deck d1 = new Deck();
 		d1.shuffle();
 		d1.print();
+	}
+
+	public int cardNumber() {
+		return this.card;
 	}
 
 }

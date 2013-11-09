@@ -51,9 +51,58 @@ public class Card {
 		return this.value;
 	}
 
-	public static void main(String[] args) {
-		Card c = new Card();
-		System.out.println(c.number()+ " " + c.suit() + " " + c.value());
+	public String toString() {
+		if (this.number < 11 && this.number > 1) {
+			if (this.suit == 1) {
+				return this.number + "Hearts";
+			} else if (this.suit == 2) {
+				return this.number + "Spades";
+			} else if (this.suit == 3) {
+				return this.number + "Diamonds";
+			} else {
+				return this.number + "Clubs";
+			}
+		} else if (this.number == 11) {
+			if (this.suit == 1) {
+				return "JHearts";
+			} else if (this.suit == 2) {
+				return "JSpades";
+			} else if (this.suit == 3) {
+				return "JDiamonds";
+			} else {
+				return "JClubs";
+			}
+		} else if (this.number == 12) {
+			if (this.suit == 1) {
+				return "QHearts";
+			} else if (this.suit == 2) {
+				return "QSpades";
+			} else if (this.suit == 3) {
+				return "QDiamonds";
+			} else {
+				return "QClubs";
+			}
+		} else if (this.number == 13) {
+			if (this.suit == 1) {
+				return "KHearts";
+			} else if (this.suit == 2) {
+				return "KSpades";
+			} else if (this.suit == 3) {
+				return "KDiamonds";
+			} else {
+				return "KClubs";
+			}
+		} else {
+			if (this.suit == 1) {
+				return "AHearts";
+			} else if (this.suit == 2) {
+				return "ASpades";
+			} else if (this.suit == 3) {
+				return "ADiamonds";
+			} else {
+				return "AClubs";
+			}
+		}
 	}
 
 }

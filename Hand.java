@@ -5,9 +5,10 @@ public class Hand {
 	private int totalValue;
 
 	public Hand(Deck d) {
+		d.shuffle();
 		this.hand[0] = d.deal();
 		this.hand[1] = d.deal();
-		this.cardsInHand = 2;
+		this.cardsInHand = 1;
 		totalValue = this.hand[0].value() + this.hand[1].value();
 		this.reduce();
 	}
@@ -15,27 +16,40 @@ public class Hand {
 	public Card card(int index) {
 		if (index <= cardsInHand) {
 			return hand[index];
+		} else {
+			return null;       
 		}
+	}
+
+	public int value() {
+		return totalValue;
 	} 
 
+	public int cardsInHand() {
+		return cardsInHand;
+	}
+
 	public void hit(Deck d) {
-		this.hand[cardsInHand] = d.deal();
-		this.totalValue += this.hand[cardsInHand].value();
-		cardsInHand++;
+		this.cardsInHand++;
+		this.hand[this.cardsInHand] = d.deal();
+		//System.out.println(this.hand[this.cardsInHand].toString());
+		this.totalValue += this.hand[this.cardsInHand].value();
 		this.reduce();
 	}
 
 	public void reduce() {
 		if (this.totalValue > 21) {
-			for (int i = 0; i < cardsInHand; i++) {
+			for (int i = 0; i < this.cardsInHand; i++) {
+				//System.out.println(this.hand[i].toString() + i);
 				this.hand[i].reduce();
 			}
 		}
+		this.totalValue = 0;
+		for (int i = 0; i <= this.cardsInHand; i++) {
+			this.totalValue += this.hand[i].value();
+		}
 	}
 
-	public void stay() {
-
-	}
 
 	public void print() {
 		for (int i = 0; i < cardsInHand; i++) {
