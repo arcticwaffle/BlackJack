@@ -1,3 +1,4 @@
+//Hand class acts as dealer class and parent class for player
 public class Hand {
 	
 	private Card[] hand = new Card[11];
@@ -37,6 +38,7 @@ public class Hand {
 		this.reduce();
 	}
 
+	//The code that finds and reduces the value of ace to one if necessary
 	public void reduce() {
 		if (this.totalValue > 21) {
 			for (int i = 0; i < this.cardsInHand; i++) {
@@ -50,30 +52,22 @@ public class Hand {
 		}
 	}
 
-
-	public void print() {
-		for (int i = 0; i < cardsInHand; i++) {
-			if (this.hand[i].suit() == 1) {
-				System.out.println(this.hand[i].number() + " of hearts ");
-			} else if (this.hand[i].suit() == 2) {
-				System.out.println(this.hand[i].number() + " of spades ");
-			} else if (this.hand[i].suit() == 3) {
-				System.out.println(this.hand[i].number() + " of diamonds ");
-			} else {
-				System.out.println(this.hand[i].number() + " of clubs ");
-			}
+	//Debugging purposes
+	
+	// public void print() {
+	// 	for (int i = 0; i < cardsInHand; i++) {
+	// 		if (this.hand[i].suit() == 1) {
+	// 			System.out.println(this.hand[i].number() + " of hearts ");
+	// 		} else if (this.hand[i].suit() == 2) {
+	// 			System.out.println(this.hand[i].number() + " of spades ");
+	// 		} else if (this.hand[i].suit() == 3) {
+	// 			System.out.println(this.hand[i].number() + " of diamonds ");
+	// 		} else {
+	// 			System.out.println(this.hand[i].number() + " of clubs ");
+	// 		}
 			
-		}
-		System.out.println(totalValue);
-	}
-
-	public static void main(String[] args) {
-		Deck d = new Deck();
-		d.shuffle();
-		Hand h = new Hand(d);
-		h.hit(d);
-		h.print();
-
-	}
+	// 	}
+	// 	System.out.println(totalValue);
+	// }
 
 }

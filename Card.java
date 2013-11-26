@@ -1,8 +1,24 @@
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 public class Card {
 	
 	private int number;
 	private int suit;
 	private int value;
+	private Image image;
 
 	public Card() {
 		this.setNumber(1);
@@ -37,6 +53,14 @@ public class Card {
 		}
 	}
 
+	public Image image() {
+		return image;
+	}
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+
 	public void setValue(){
 		if (this.number < 11 && this.number > 1) {
 			this.value = this.number;
@@ -51,6 +75,7 @@ public class Card {
 		return this.value;
 	}
 
+	//Returns String of card
 	public String toString() {
 		if (this.number < 11 && this.number > 1) {
 			if (this.suit == 1) {
