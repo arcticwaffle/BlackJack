@@ -21,6 +21,7 @@ public class Card {
 	private Image image;
 
 	public Card() {
+		//To prevent error. This will be changed in Deck
 		this.setNumber(1);
 		this.setSuit(1);
 		this.setValue();

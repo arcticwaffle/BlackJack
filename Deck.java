@@ -13,6 +13,8 @@ public class Deck {
 		// for (int i = 0; i < 52; i++) {
 		// 	System.out.println(cards[i]);
 		// }
+		
+		// Sets up unshuffled deck of cards
 		for (int i = 0; i < cards.length; i++) {
 			cards[i].setNumber((i % 13) + 1);
 			if (i < 13) {
@@ -29,6 +31,7 @@ public class Deck {
 		card = -1;
 	}
 
+	//Debugging
 	public void print() {
 		for (int i = 0; i < cards.length; i++) {
 			if (cards[i].suit() == 1) {

@@ -11,6 +11,7 @@ class Player extends Hand {
 		this.netWorth = netWorth;
 	}
 
+	//Functions only for use of player
 	public void setBet(int bet) {
 		if (bet > 0) {
 			this.bet = bet;

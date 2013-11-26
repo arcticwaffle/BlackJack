@@ -30,6 +30,7 @@ public class Hand {
 		return cardsInHand;
 	}
 
+	
 	public void hit(Deck d) {
 		this.cardsInHand++;
 		this.hand[this.cardsInHand] = d.deal();
